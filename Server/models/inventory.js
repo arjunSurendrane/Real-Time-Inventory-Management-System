@@ -11,6 +11,10 @@ const inventorySchema = new mongoose.Schema({
     }
 })
 
+inventorySchema.pre(/^find/, function (next) {
+    this.populate(['supplierId'])
+    next()
+})
 
 const Inventory = mongoose.model('Inventory', inventorySchema, 'Inventory')
 export default Inventory
