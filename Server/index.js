@@ -9,6 +9,7 @@ import connectToLocalhost from './config/server.js';
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import AppError from './utils/AppError.js';
+import { socketEvent } from './config/socket.js';
 dotenv.config({ path: './config.env' })
 const app = express()
 app.use(express.json())
@@ -16,7 +17,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 const httpServer = createServer(app);
-const io = new Server(httpServer, {});
+const io = new Server(httpServer);
 
 /**
  * Connect to db
@@ -32,7 +33,8 @@ app.use('/*', (req, res, next) => next(new AppError("page not foung", 404)))
 /**
  * Create server
  */
-connectToLocalhost(io, httpServer)
+socketEvent(io)
+connectToLocalhost(httpServer)
 
 /**
  * Global error handling middleware

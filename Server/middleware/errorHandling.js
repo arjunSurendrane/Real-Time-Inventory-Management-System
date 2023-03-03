@@ -1,5 +1,6 @@
 /**
  * Global error handling middleware
+ * @description if the error.status is fail that means that is an error it statusCode startsWith  
  * @param {Object} err 
  * @param {Object} req 
  * @param {Object} res 
