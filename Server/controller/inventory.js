@@ -17,7 +17,8 @@ const response = (res, status, data) => {
 }
 
 /**
- * Retrieve all product details from inventory collection
+ * Gel All Data
+ * @description Retrieve all product details from inventory collection
  * @param {Object} req - request data
  * @param {Object} res - response
  */
@@ -27,7 +28,8 @@ export const retrieveInventory = catchAsync(async (req, res, next) => {
 })
 
 /**
- * Retrieve a specific product details from inventory collection
+ * Get One Document
+ * @description Retrieve a specific product details from inventory collection
  * @param {Object} req - request data
  * @param {Object} res - response
  */
@@ -39,7 +41,8 @@ export const inventory = catchAsync(async (req, res, next) => {
 })
 
 /**
- * Add a new product details into inventory collection
+ * Create New Document
+ * @description Add a new product details into inventory collection
  * @param {Object} req 
  * @param {Object} res 
  */
@@ -50,7 +53,8 @@ export const createInventory = catchAsync(async (req, res, next) => {
 })
 
 /**
- * Update Product details 
+ * Update
+ * @description Update Product details 
  * @param {Object} req 
  * @param {Object} res 
  */
@@ -62,7 +66,8 @@ export const updateInventory = catchAsync(async (req, res, next) => {
 })
 
 /**
- * Delete product data from inventory collection
+ * Delete
+ * @description Delete product data from inventory collection
  * @param {Object} req 
  * @param {Object} res 
  */
