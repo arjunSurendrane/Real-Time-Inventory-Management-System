@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+const io = new Server(httpServer, { cors: { origin: [`http://127.0.0.1:5173`] } });
 
 /**
  * Connect to db
@@ -40,3 +40,7 @@ connectToLocalhost(httpServer)
  * Global error handling middleware
  */
 app.use(errorHandling)
+
+
+
+
