@@ -69,10 +69,10 @@ The application can perform basic CRUD operations on inventory and send live upd
 
 #### Login page
 
-![App Screenshot](./Login page.png)
+![App Screenshot](https://asset.cloudinary.com/dv3kyik58/7f0a32d7a65e6417339e1800e91640fd)
 
 #### Home page
-![App Screenshot](./user interface.png)
+![App Screenshot](https://asset.cloudinary.com/dv3kyik58/e957deb7def5b52f2acca3a73bbcf773)
 
 
 ## Tech Stack
