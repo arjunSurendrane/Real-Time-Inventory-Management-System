@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
-import { createWebSocket } from "./api/socket";
+import { Route, Routes } from "react-router";
+import HomePage from "./pages/Home";
+import LoginPage from "./pages/Login";
 
 function App() {
-  useEffect(() => {
-    createWebSocket();
-  }, []);
-  const [response, setResponse] = useState("");
-  return <div>App</div>;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
