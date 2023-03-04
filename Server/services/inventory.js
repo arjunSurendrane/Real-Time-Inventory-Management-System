@@ -1,7 +1,5 @@
-import mongoose from "mongoose"
-import Inventory from "../models/inventory.js"
-
-
+import mongoose from "mongoose";
+import Inventory from "../models/inventory.js";
 
 /**
  * Get All Inventory Data
@@ -9,8 +7,8 @@ import Inventory from "../models/inventory.js"
  * @returns {Array} - array of doucments
  */
 export const getAllInventory = async () => {
-    return await Inventory.find()
-}
+  return await Inventory.find();
+};
 
 /**
  * Get One Product Data
@@ -19,8 +17,8 @@ export const getAllInventory = async () => {
  * @returns {Object} - inventory details
  */
 export const getById = async (id) => {
-    return await Inventory.findById(id)
-}
+  return await Inventory.findById(id);
+};
 
 /**
  * Create new product data
@@ -29,8 +27,8 @@ export const getById = async (id) => {
  * @returns {Object} - inventory details
  */
 export const create = async (data) => {
-    return await Inventory.create(data)
-}
+  return await Inventory.create(data);
+};
 
 /**
  * Updata Product
@@ -40,8 +38,8 @@ export const create = async (data) => {
  * @returns {Object} - inventory details
  */
 export const update = async (id, data) => {
-    return await Inventory.findByIdAndUpdate(id, data)
-}
+  return await Inventory.findByIdAndUpdate(id, data);
+};
 
 /**
  * Delete Product
@@ -50,5 +48,5 @@ export const update = async (id, data) => {
  * @returns {Object} - inventory details
  */
 export const remove = async (id) => {
-    return await Inventory.findByIdAndDelete(id)
-}
+  return await Inventory.findByIdAndDelete(id);
+};

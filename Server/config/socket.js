@@ -1,21 +1,38 @@
-
+import { getAllInventory } from "../services/inventory.js";
 /**
- * Handle events
- * @param {Object} io - Socket.io Server
+ * Socket Class
+ * @description create a socket class for connect to client with a websocket communication
  */
-export const socketEvent = (io) => {
+class socket {
+  constructor(io) {
     io.on("connection", (socket) => {
-        if (socket.handshake.auth.token == 123) {
-            console.log("New client connected");
-            console.log(socket.id);
-            socket.emit('fromApi', new Date())
-            socket.on('hai', (data) => {
-                console.log(data)
-            })
-            socket.on("disconnect", () => {
-                console.log("Client disconnected");
-            });
-        }
+      console.log(`Connected to cllient-${socket.id}`);
+      this.socket = socket;
+      socket.on("diconnect", () => {
+        console.log("disconnected");
+      });
+      socket.on("data", (data) => {
+        this.sendinventoryData();
+      });
     });
+  }
+  /**
+   * Send Inventory Date
+   * @description - This function is used to send real time inventory data to client
+   * @param {String} message  - It is a message that shows in client side
+   */
+  sendinventoryData = async (message = "Welcome") => {
+    try {
+      /**
+       * @description getAllInventory - it is used to get inventory data
+       * - it retun an array
+       */
+      const data = await getAllInventory();
+      this.socket.emit("inventory", { data, message });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
+export default socket;
