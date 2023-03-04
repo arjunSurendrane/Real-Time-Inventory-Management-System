@@ -69,10 +69,10 @@ The application can perform basic CRUD operations on inventory and send live upd
 
 #### Login page
 
-![App Screenshot](./Login page.png)
+![App Screenshot](./"Login page.png")
 
 #### Home page
-![App Screenshot](./user interface.png)
+![App Screenshot](./"user interface.png")
 
 
 ## Tech Stack
