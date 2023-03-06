@@ -10,7 +10,7 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import AppError from "./utils/AppError.js";
 import socket from "./config/socket.js";
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./example.env" });
 const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
